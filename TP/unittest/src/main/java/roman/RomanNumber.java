@@ -3,6 +3,8 @@ package roman;
 
 import java.util.LinkedHashMap;
 import java.util.regex.Pattern;
+import java.util.Set;
+
 
 public final class RomanNumber extends Number {
 
@@ -43,7 +45,7 @@ public final class RomanNumber extends Number {
   /**
    * @{inheritDoc}
    */
-  @OverrideIterator it = entrySet.iterator();
+  //@OverrideIterator it = entrySet.iterator();
   public double doubleValue() {
     Double d = new Double(value);
     return d;
@@ -88,12 +90,40 @@ public final class RomanNumber extends Number {
     return new RomanNumber(value);
   }
 
-  private static int fromRoman(String romanValue) {
-    // TODO
+  private static int fromRoman(String romanValue) throws IllegalArgumentException {
+  	if(romanValue.matches(VALIDATION_RE.pattern())){
+  		throw new IllegalArgumentException();
+  	}
+  	for(int i=0;i<romanValue.length();i++){
+  		if(!Character.isUpperCase(romanValue.charAt(i))){
+  			throw new IllegalArgumentException();
+  		}
+  	}
+    int resultat=0;
+    int index=0;
+    String atest;
+    Set entrySet = SYMBOLS.entrySet();
+    Set temp;
+    Iterator it = entrySet.iterator();
+    while(it.hasNext()){
+    	temp=it.next();
+    	if(temp.getKey().length()>1){
+    		atest = romanValue.charAt(index) + romanValue.charAt(index+1);
+    	}else{
+    		atest = romanValue.charAt(index);
+    	}
+    	while(atest==temp.getKey()){
+    		resultat=resultat + temp.getValue();
+    		index=index+temp.getKey().length();
+    	}
+    }
     return 0;
   }
 
-  private static String toRoman(int value) {
+  private static String toRoman(int value) throws IllegalArgumentException {
+  	if(value<=0 || value>3999){
+  		throw new IllegalArgumentException();
+  	}
     String resultat="";
     Set entrySet = SYMBOLS.entrySet();
     Set temp;
@@ -102,7 +132,7 @@ public final class RomanNumber extends Number {
     	temp=it.next();
     	while(value>=temp.getValue()){
     		resultat=resultat + temp.getKey();
-    		value=value-temp.value();
+    		value=value-temp.getValue();
     	}
     }
     return resultat;
