@@ -170,14 +170,14 @@ public class RomanNumberTest {
 	
 	//fail antecedents
 	@Test(expected = IllegalArgumentException.class)
-	public void failAntecedent() {
+	public void failAntecedent1() {
 		int res = 0;
 		res=fromRoman("VX");
 	}
 
 	//fail antecedents
 	@Test(expected = IllegalArgumentException.class)
-	public void failAntecedent() {
+	public void failAntecedent2() {
 		int res = 0;
 		res=fromRoman("XCX");
 	}
@@ -185,7 +185,7 @@ public class RomanNumberTest {
 
 	//fail antecedents
 	@Test(expected = IllegalArgumentException.class)
-	public void failAntecedent() {
+	public void failAntecedent3() {
 		int res = 0;
 		res=fromRoman("IXI");
 	}

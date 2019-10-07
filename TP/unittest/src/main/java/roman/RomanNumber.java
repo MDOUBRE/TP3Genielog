@@ -43,7 +43,7 @@ public final class RomanNumber extends Number {
   /**
    * @{inheritDoc}
    */
-  @Override
+  @OverrideIterator it = entrySet.iterator();
   public double doubleValue() {
     Double d = new Double(value);
     return d;
@@ -54,8 +54,8 @@ public final class RomanNumber extends Number {
    */
   @Override
   public float floatValue() {
-    // TODO
-    return 0;
+  	Float f = new Float(value);
+    return f;
   }
 
   /**
@@ -63,8 +63,7 @@ public final class RomanNumber extends Number {
    */
   @Override
   public int intValue() {
-    // TODO
-    return 0;
+    return value;
   }
 
   /**
@@ -72,8 +71,8 @@ public final class RomanNumber extends Number {
    */
   @Override
   public long longValue() {
-    // TODO
-    return 0;
+  	Long l= new Long(value);
+    return l;
   }
 
   @Override
@@ -95,7 +94,17 @@ public final class RomanNumber extends Number {
   }
 
   private static String toRoman(int value) {
-    // TODO
-    return "";
+    String resultat="";
+    Set entrySet = SYMBOLS.entrySet();
+    Set temp;
+    Iterator it = entrySet.iterator();
+    while(it.hasNext()){
+    	temp=it.next();
+    	while(value>=temp.getValue()){
+    		resultat=resultat + temp.getKey();
+    		value=value-temp.value();
+    	}
+    }
+    return resultat;
   }
 }
