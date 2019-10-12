@@ -3,12 +3,12 @@ package roman;
 import java.util.HashMap;
 import java.util.Map;
 
-import RomanNumber;
+import roman.RomanNumber;
 
 import org.junit.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
-
+import static org.junit.Assert.*;
 
 public class RomanNumberTest {
   public static final HashMap<Integer, String> KNOWN_VALUES = new HashMap<>();
@@ -89,10 +89,10 @@ public class RomanNumberTest {
 	@Test
 	public void romNtoInt() {
 		int res = 0;
-		res=fromRoman("V");
+		res=RomanNumber.fromRoman("V");
 		assertEquals(res,5);
 
-		res=fromRoman("MMMDCX");
+		res=RomanNumber.fromRoman("MMMDCX");
 		assertEquals(res,3610);
 	}
 
@@ -100,88 +100,93 @@ public class RomanNumberTest {
 	@Test
 	public void intToRomN(){
 		String res;
-		res=toRoman(6);
+		res=RomanNumber.toRoman(6);
 		assertEquals(res,"VI");
 
-		res=toRoman(3611);
+		res=RomanNumber.toRoman(3611);
 		assertEquals(res,"MMMDCXI");
 	}
 
 	// fail negative
 	@Test(expected = IllegalArgumentException.class)
 	public void failNegative() {
-		int res = 0;
-		res=toRoman(-5);
+		String res;
+    int num = -5;
+		res=RomanNumber.toRoman(num);
 	}
 
 	// fail nonint
+  // s'execute pas car de toute faŋon ŋa prend que des int
+  /*
 	@Test(expected = IllegalArgumentException.class)
 	public void failNonint() {
 		int res = 0;
-		res=toRoman(5.34);
+		res=RomanNumber.toRoman(5.34);
 	}
+  */
 
 	// fail out of bound
 	@Test(expected = IllegalArgumentException.class)
 	public void failOutOfBound() {
-		int res = 0;
-		res=toRoman(5000);
+		String res;
+    int num = 5000;
+		res=RomanNumber.toRoman(num);
 	}
 
 	// fail failTooMuchSymbol
 	@Test(expected = IllegalArgumentException.class)
 	public void failTooMuchSymbolX() {
 		int res = 0;
-		res=fromRoman("XXXX");
+		res=RomanNumber.fromRoman("XXXX");
 	}
 
 	// fail failTooMuchSymbol
 	@Test(expected = IllegalArgumentException.class)
 	public void failTooMuchSymbolI() {
 		int res = 0;
-		res=fromRoman("IIII");
+		res=RomanNumber.fromRoman("IIII");
 	}
 
 	// fail failTooMuchSymbol
 	@Test(expected = IllegalArgumentException.class)
 	public void failTooMuchSymbolC() {
 		int res = 0;
-		res=fromRoman("CCCC");
+		res=RomanNumber.fromRoman("CCCC");
 	}
 
 	// fail TooMuchPair
 	@Test(expected = IllegalArgumentException.class)
 	public void failTooMuchPairV() {
 		int res = 0;
-		res=fromRoman("VV");
+		res=RomanNumber.fromRoman("VV");
 	}
 
 	// fail TooMuchPair
 	@Test(expected = IllegalArgumentException.class)
 	public void failTooMuchPairL() {
 		int res = 0;
-		res=fromRoman("LL");
+		res=RomanNumber.fromRoman("LL");
 	}
 
 	// fail TooMuchPair
 	@Test(expected = IllegalArgumentException.class)
 	public void failTooMuchPairD() {
 		int res = 0;
-		res=fromRoman("DD");
+		res=RomanNumber.fromRoman("DD");
 	}
 
 	//fail antecedents
 	@Test(expected = IllegalArgumentException.class)
 	public void failAntecedent1() {
 		int res = 0;
-		res=fromRoman("VX");
+		res=RomanNumber.fromRoman("VX");
 	}
 
 	//fail antecedents
 	@Test(expected = IllegalArgumentException.class)
 	public void failAntecedent2() {
 		int res = 0;
-		res=fromRoman("XCX");
+		res=RomanNumber.fromRoman("XCX");
 	}
 
 
@@ -189,23 +194,23 @@ public class RomanNumberTest {
 	@Test(expected = IllegalArgumentException.class)
 	public void failAntecedent3() {
 		int res = 0;
-		res=fromRoman("IXI");
+		res=RomanNumber.fromRoman("IXI");
 	}
 
 	//validity int
 	@Test
 	public void validityInt(){
 		for(int i=1;i<4000;i++){
-			assertTrue(fromRoman(toRoman(i))==i);
+			assertTrue(RomanNumber.fromRoman(RomanNumber.toRoman(i))==i);
 		}
 	}
 
-	//toRoman return cap
+	//RomanNumber.toRoman return cap
 	@Test
 	public void validToRomanRCap() {
 		String Rom;
 		for(int i=1;i<4000;i++){
-			Rom = toRoman(i);
+			Rom = RomanNumber.toRoman(i);
 			for(int j=0;j<Rom.length();j++){
 				assertTrue(Character.isUpperCase(Rom.charAt(j)));
 			}
@@ -216,7 +221,7 @@ public class RomanNumberTest {
 	@Test(expected = IllegalArgumentException.class)
 	public void failAntecedent() {
 		int res = 0;
-		res=fromRoman("xii");
+		res=RomanNumber.fromRoman("xii");
 	}
 
 }

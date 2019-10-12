@@ -91,7 +91,7 @@ public final class RomanNumber extends Number {
     return new RomanNumber(value);
   }
 
-  private static int fromRoman(String romanValue) throws IllegalArgumentException {
+  public static int fromRoman(String romanValue) throws IllegalArgumentException {
   	if(romanValue.matches(VALIDATION_RE.pattern())){
   		throw new IllegalArgumentException();
   	}
@@ -122,7 +122,7 @@ public final class RomanNumber extends Number {
     return 0;
   }
 
-  private static String toRoman(int value) throws IllegalArgumentException {
+  public static String toRoman(int value) throws IllegalArgumentException {
   	if(value<=0 || value>3999){
   		throw new IllegalArgumentException();
   	}
