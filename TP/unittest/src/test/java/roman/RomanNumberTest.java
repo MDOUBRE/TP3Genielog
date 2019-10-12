@@ -3,6 +3,8 @@ package roman;
 import java.util.HashMap;
 import java.util.Map;
 
+import RomanNumber;
+
 import org.junit.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
@@ -89,64 +91,64 @@ public class RomanNumberTest {
 		int res = 0;
 		res=fromRoman("V");
 		assertEquals(res,5);
-		
+
 		res=fromRoman("MMMDCX");
 		assertEquals(res,3610);
 	}
-	
+
 	// int -> romanNumber
 	@Test
 	public void intToRomN(){
 		String res;
 		res=toRoman(6);
 		assertEquals(res,"VI");
-		
+
 		res=toRoman(3611);
 		assertEquals(res,"MMMDCXI");
 	}
-	
+
 	// fail negative
 	@Test(expected = IllegalArgumentException.class)
 	public void failNegative() {
 		int res = 0;
 		res=toRoman(-5);
 	}
-	
+
 	// fail nonint
 	@Test(expected = IllegalArgumentException.class)
 	public void failNonint() {
 		int res = 0;
 		res=toRoman(5.34);
 	}
-	
+
 	// fail out of bound
 	@Test(expected = IllegalArgumentException.class)
 	public void failOutOfBound() {
 		int res = 0;
 		res=toRoman(5000);
 	}
-		
+
 	// fail failTooMuchSymbol
 	@Test(expected = IllegalArgumentException.class)
 	public void failTooMuchSymbolX() {
 		int res = 0;
 		res=fromRoman("XXXX");
 	}
-	
+
 	// fail failTooMuchSymbol
 	@Test(expected = IllegalArgumentException.class)
 	public void failTooMuchSymbolI() {
 		int res = 0;
 		res=fromRoman("IIII");
 	}
-	
+
 	// fail failTooMuchSymbol
 	@Test(expected = IllegalArgumentException.class)
 	public void failTooMuchSymbolC() {
 		int res = 0;
 		res=fromRoman("CCCC");
 	}
-	
+
 	// fail TooMuchPair
 	@Test(expected = IllegalArgumentException.class)
 	public void failTooMuchPairV() {
@@ -167,7 +169,7 @@ public class RomanNumberTest {
 		int res = 0;
 		res=fromRoman("DD");
 	}
-	
+
 	//fail antecedents
 	@Test(expected = IllegalArgumentException.class)
 	public void failAntecedent1() {
@@ -197,7 +199,7 @@ public class RomanNumberTest {
 			assertTrue(fromRoman(toRoman(i))==i);
 		}
 	}
-	
+
 	//toRoman return cap
 	@Test
 	public void validToRomanRCap() {
@@ -216,5 +218,5 @@ public class RomanNumberTest {
 		int res = 0;
 		res=fromRoman("xii");
 	}
-	
+
 }

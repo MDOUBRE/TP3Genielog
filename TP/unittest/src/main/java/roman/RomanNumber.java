@@ -4,6 +4,7 @@ package roman;
 import java.util.LinkedHashMap;
 import java.util.regex.Pattern;
 import java.util.Set;
+import java.util.*;
 
 
 public final class RomanNumber extends Number {
@@ -106,7 +107,7 @@ public final class RomanNumber extends Number {
     Set temp;
     Iterator it = entrySet.iterator();
     while(it.hasNext()){
-    	temp=it.next();
+    	System.out.println(it.next());/*
     	if(temp.getKey().length()>1){
     		atest = romanValue.charAt(index) + romanValue.charAt(index+1);
     	}else{
@@ -116,6 +117,7 @@ public final class RomanNumber extends Number {
     		resultat=resultat + temp.getValue();
     		index=index+temp.getKey().length();
     	}
+      */
     }
     return 0;
   }
@@ -129,11 +131,12 @@ public final class RomanNumber extends Number {
     Set temp;
     Iterator it = entrySet.iterator();
     while(it.hasNext()){
-    	temp=it.next();
+    	System.out.println(it.next());/*
     	while(value>=temp.getValue()){
     		resultat=resultat + temp.getKey();
     		value=value-temp.getValue();
     	}
+      */
     }
     return resultat;
   }
