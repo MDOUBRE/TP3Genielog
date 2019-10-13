@@ -140,7 +140,7 @@ public final class RomanNumber extends Number {
     	}
     }
 
-    return 0;
+    return resultat;
   }
 
   public static String toRoman(int value) throws IllegalArgumentException {
