@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="roman.RomanNumberTest" tests="18" skipped="0" failures="14" errors="0" timestamp="2019-10-13T11:47:17" hostname="MSI" time="0.964">
+<testsuite name="roman.RomanNumberTest" tests="18" skipped="0" failures="14" errors="0" timestamp="2019-10-13T11:42:50" hostname="DESKTOP-3BSEN9O" time="0.149">
   <properties/>
-  <testcase name="failAntecedent1" classname="roman.RomanNumberTest" time="0.01">
+  <testcase name="failAntecedent1" classname="roman.RomanNumberTest" time="0.003">
     <failure message="java.lang.Exception: Unexpected exception, expected&lt;java.lang.IllegalArgumentException&gt; but was&lt;java.lang.StringIndexOutOfBoundsException&gt;" type="java.lang.Exception">java.lang.Exception: Unexpected exception, expected&lt;java.lang.IllegalArgumentException&gt; but was&lt;java.lang.StringIndexOutOfBoundsException&gt;
 	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:28)
 	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
@@ -59,7 +59,7 @@ Caused by: java.lang.StringIndexOutOfBoundsException: String index out of range:
 	... 39 more
 </failure>
   </testcase>
-  <testcase name="failAntecedent2" classname="roman.RomanNumberTest" time="0.001">
+  <testcase name="failAntecedent2" classname="roman.RomanNumberTest" time="0.0">
     <failure message="java.lang.Exception: Unexpected exception, expected&lt;java.lang.IllegalArgumentException&gt; but was&lt;java.lang.StringIndexOutOfBoundsException&gt;" type="java.lang.Exception">java.lang.Exception: Unexpected exception, expected&lt;java.lang.IllegalArgumentException&gt; but was&lt;java.lang.StringIndexOutOfBoundsException&gt;
 	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:28)
 	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
@@ -117,7 +117,7 @@ Caused by: java.lang.StringIndexOutOfBoundsException: String index out of range:
 	... 39 more
 </failure>
   </testcase>
-  <testcase name="failAntecedent3" classname="roman.RomanNumberTest" time="0.001">
+  <testcase name="failAntecedent3" classname="roman.RomanNumberTest" time="0.0">
     <failure message="java.lang.Exception: Unexpected exception, expected&lt;java.lang.IllegalArgumentException&gt; but was&lt;java.lang.StringIndexOutOfBoundsException&gt;" type="java.lang.Exception">java.lang.Exception: Unexpected exception, expected&lt;java.lang.IllegalArgumentException&gt; but was&lt;java.lang.StringIndexOutOfBoundsException&gt;
 	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:28)
 	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
@@ -175,10 +175,10 @@ Caused by: java.lang.StringIndexOutOfBoundsException: String index out of range:
 	... 39 more
 </failure>
   </testcase>
-  <testcase name="failOutOfBound" classname="roman.RomanNumberTest" time="0.001"/>
-  <testcase name="validToRomanRCap" classname="roman.RomanNumberTest" time="0.939"/>
-  <testcase name="failAntecedent" classname="roman.RomanNumberTest" time="0.001"/>
-  <testcase name="validityInt" classname="roman.RomanNumberTest" time="0.0">
+  <testcase name="failOutOfBound" classname="roman.RomanNumberTest" time="0.0"/>
+  <testcase name="validToRomanRCap" classname="roman.RomanNumberTest" time="0.141"/>
+  <testcase name="failAntecedent" classname="roman.RomanNumberTest" time="0.0"/>
+  <testcase name="validityInt" classname="roman.RomanNumberTest" time="0.001">
     <failure message="java.lang.IllegalArgumentException" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException
 	at roman.RomanNumber.fromRoman(RomanNumber.java:96)
 	at roman.RomanNumberTest.validityInt(RomanNumberTest.java:204)
@@ -442,7 +442,7 @@ Caused by: java.lang.StringIndexOutOfBoundsException: String index out of range:
 	... 39 more
 </failure>
   </testcase>
-  <testcase name="failTooMuchSymbolI" classname="roman.RomanNumberTest" time="0.001">
+  <testcase name="failTooMuchSymbolI" classname="roman.RomanNumberTest" time="0.0">
     <failure message="java.lang.Exception: Unexpected exception, expected&lt;java.lang.IllegalArgumentException&gt; but was&lt;java.lang.StringIndexOutOfBoundsException&gt;" type="java.lang.Exception">java.lang.Exception: Unexpected exception, expected&lt;java.lang.IllegalArgumentException&gt; but was&lt;java.lang.StringIndexOutOfBoundsException&gt;
 	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:28)
 	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
@@ -558,7 +558,7 @@ Caused by: java.lang.StringIndexOutOfBoundsException: String index out of range:
 	... 39 more
 </failure>
   </testcase>
-  <testcase name="romNtoInt" classname="roman.RomanNumberTest" time="0.001">
+  <testcase name="romNtoInt" classname="roman.RomanNumberTest" time="0.0">
     <failure message="java.lang.IllegalArgumentException" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException
 	at roman.RomanNumber.fromRoman(RomanNumber.java:96)
 	at roman.RomanNumberTest.romNtoInt(RomanNumberTest.java:92)
@@ -611,7 +611,7 @@ Caused by: java.lang.StringIndexOutOfBoundsException: String index out of range:
 	at java.lang.Thread.run(Thread.java:748)
 </failure>
   </testcase>
-  <testcase name="failTooMuchPairD" classname="roman.RomanNumberTest" time="0.001">
+  <testcase name="failTooMuchPairD" classname="roman.RomanNumberTest" time="0.0">
     <failure message="java.lang.Exception: Unexpected exception, expected&lt;java.lang.IllegalArgumentException&gt; but was&lt;java.lang.StringIndexOutOfBoundsException&gt;" type="java.lang.Exception">java.lang.Exception: Unexpected exception, expected&lt;java.lang.IllegalArgumentException&gt; but was&lt;java.lang.StringIndexOutOfBoundsException&gt;
 	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:28)
 	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
@@ -727,7 +727,7 @@ Caused by: java.lang.StringIndexOutOfBoundsException: String index out of range:
 	... 39 more
 </failure>
   </testcase>
-  <testcase name="failTooMuchPairV" classname="roman.RomanNumberTest" time="0.001">
+  <testcase name="failTooMuchPairV" classname="roman.RomanNumberTest" time="0.0">
     <failure message="java.lang.Exception: Unexpected exception, expected&lt;java.lang.IllegalArgumentException&gt; but was&lt;java.lang.StringIndexOutOfBoundsException&gt;" type="java.lang.Exception">java.lang.Exception: Unexpected exception, expected&lt;java.lang.IllegalArgumentException&gt; but was&lt;java.lang.StringIndexOutOfBoundsException&gt;
 	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:28)
 	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
