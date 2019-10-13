@@ -219,7 +219,7 @@ public class RomanNumberTest {
 
 	//fail no CAP
 	@Test(expected = IllegalArgumentException.class)
-	public void failAntecedent() {
+	public void failNoCap() {
 		int res = 0;
 		res=RomanNumber.fromRoman("xii");
 	}

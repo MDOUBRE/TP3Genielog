@@ -93,31 +93,40 @@ public final class RomanNumber extends Number {
 
   public static int fromRoman(String romanValue) throws IllegalArgumentException {
   	if(romanValue.matches(VALIDATION_RE.pattern())){
-  		throw new IllegalArgumentException();
+  		throw new IllegalArgumentException("correspond pas au pattern");
   	}
   	for(int i=0;i<romanValue.length();i++){
   		if(!Character.isUpperCase(romanValue.charAt(i))){
-  			throw new IllegalArgumentException();
+  			throw new IllegalArgumentException("est pas tout majuscule");
   		}
   	}
     Set<String> valRom = SYMBOLS.keySet();
     String atest;
     int index = 0;
+    int add = 0;
     int resultat = 0;
     for(String romSymb:valRom){
       if(romSymb.length()>1){
-        atest = romanValue.charAt(index) + "";
-        atest.concat(romanValue.charAt(index+1) + "");
-        index=index+2;
+        atest = romanValue.charAt(index) + "" + romanValue.charAt(index+1);
+        add=2;
     	}else{
     		atest = romanValue.charAt(index) + "";
-        index=index+1;
+        add=1;
     	}
-      while(atest==romSymb){
+
+      System.out.println("atest ; " + atest);
+      System.out.println("romSymb ; " + atest);
+
+      while(romSymb.equals(atest)){
     		resultat=resultat + SYMBOLS.get(romSymb);
+        index=index+add;
     	}
     }
-
+    /*
+    if(index<romanValue.length()){
+      throw new IllegalArgumentException("test erreur 2");
+    }
+    */
     return resultat;
   }
 
