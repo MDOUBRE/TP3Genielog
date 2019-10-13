@@ -124,19 +124,38 @@ public final class RomanNumber extends Number {
   public static String toRoman(int value) throws IllegalArgumentException {
   	if(value<=0 || value>3999){
   		throw new IllegalArgumentException();
-  	}
+    }
+    
+    String resultat="";
+    Set<String> valRom = SYMBOLS.keySet();
+    Set temp;
+
+    for(String rom:valRom){
+      SYMBOLS.get(valRom);
+      while(value>=temp.getValue()){
+        resultat=resultat+temp.getKey();
+        value=value-temp.getValue();
+      }
+    }
+
+    
+
+    /*
     String resultat="";
     Set entrySet = SYMBOLS.entrySet();
     Set temp;
     Iterator it = entrySet.iterator();
     while(it.hasNext()){
-    	System.out.println(it.next());/*
+    	System.out.println(it.next());
     	while(value>=temp.getValue()){
     		resultat=resultat + temp.getKey();
     		value=value-temp.getValue();
     	}
-      */
+      
     }
+    */
+
+
     return resultat;
   }
 }
