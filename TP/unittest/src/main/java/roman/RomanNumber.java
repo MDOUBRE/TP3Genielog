@@ -100,28 +100,6 @@ public final class RomanNumber extends Number {
   			throw new IllegalArgumentException();
   		}
   	}
-    /*
-    int resultat=0;
-    int index=0;
-    String atest;
-    Set<Map.Entry<String, Integer>> entrySet = SYMBOLS.entrySet();
-    Map<String, Integer> temp;
-    Iterator it = entrySet.iterator();
-    while(it.hasNext()){
-    	System.out.println(it.next());
-    	if(temp.getKey().length()>1){
-    		atest = romanValue.charAt(index) + romanValue.charAt(index+1);
-    	}else{
-    		atest = romanValue.charAt(index);
-    	}
-    	while(atest==temp.getKey()){
-    		resultat=resultat + temp.getValue();
-    		index=index+temp.getKey().length();
-    	}
-
-    }
-    */
-
     Set<String> valRom = SYMBOLS.keySet();
     String atest;
     int index = 0;
@@ -140,7 +118,7 @@ public final class RomanNumber extends Number {
     	}
     }
 
-    return 0;
+    return resultat;
   }
 
   public static String toRoman(int value) throws IllegalArgumentException {
